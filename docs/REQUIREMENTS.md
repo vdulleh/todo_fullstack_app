@@ -43,7 +43,7 @@ The application should allow users to manage tasks by:
 
 #### Task Listing
 
-- As a user, I should be able to view all tasks.
+- As a user, I should be able to view all tasks.(DONE)
 
 #### Task Creation
 
