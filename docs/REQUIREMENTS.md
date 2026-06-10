@@ -33,10 +33,10 @@ The application should allow users to manage tasks by:
 
 ### Project Setup
 
-- Setup Git repository
-- Create React application using Vite
-- Configure React Router
-- Install and configure React Hook Form
+- Setup Git repository (DONE)
+- Create React application using Vite(DONE)
+- Configure React Router(DONE)
+- Install and configure React Hook Form(DONE)
 - Install and configure Yup validation
 
 ### Features
