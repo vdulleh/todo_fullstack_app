@@ -37,7 +37,7 @@ The application should allow users to manage tasks by:
 - Create React application using Vite(DONE)
 - Configure React Router(DONE)
 - Install and configure React Hook Form(DONE)
-- Install and configure Yup validation
+- Install and configure Yup validation (DONE)
 
 ### Features
 
