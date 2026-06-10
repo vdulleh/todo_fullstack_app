@@ -47,8 +47,8 @@ The application should allow users to manage tasks by:
 
 #### Task Creation
 
-- As a user, I should be able to add a new task.
-- As a user, I should immediately see the task after adding it.
+- As a user, I should be able to add a new task.(DONE)
+- As a user, I should immediately see the task after adding it.(DONE)
 
 #### Task Update
 
