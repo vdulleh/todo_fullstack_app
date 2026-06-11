@@ -64,8 +64,8 @@ The application should allow users to manage tasks by:
 
 ### Project Setup
 
-- Setup Express.js application
-- Configure Prisma ORM
+- Setup Express.js application(DONE)
+- Configure Prisma ORM(DONE)
 - Connect Prisma to the database
 
 ### Database Schema
