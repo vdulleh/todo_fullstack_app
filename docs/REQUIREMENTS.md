@@ -52,11 +52,11 @@ The application should allow users to manage tasks by:
 
 #### Task Update
 
-- As a user, I should be able to edit an existing task.
+- As a user, I should be able to edit an existing task.(DONE)
 
 #### Task Deletion
 
-- As a user, I should be able to delete an existing task.
+- As a user, I should be able to delete an existing task.(DONE)
 
 ---
 
