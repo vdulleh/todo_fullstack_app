@@ -33,7 +33,7 @@ function App() { // Defining the App component, which is the main component of t
     {
       id: 6,
       task: 'plan the weekend trip',
-      isEditing: true
+      isEditing: false
     }
 
   ]);
@@ -74,6 +74,13 @@ function App() { // Defining the App component, which is the main component of t
     setTodoTasks(updatedTasks); // This will update the state of the todoTasks with the updated tasks, which will trigger a re-render of the component and allow the user to see the edit form for the selected task.
   }
 
+  function deleteTask(task) {
+    const updatedTasks = todoTasks.filter(t => {
+      return t.id !== task.id;
+    });
+    setTodoTasks(updatedTasks);
+  }
+
   return (
     <>
       <h2>ToDo App</h2>
@@ -84,7 +91,10 @@ function App() { // Defining the App component, which is the main component of t
         {
           todoTasks.map((task, index) => (<li key={index}>
             {
-              task.isEditing ? (<EditToDoForm handleUpdateTask={handleUpdateTask} task={task} />) : <span onClick={() => currentTask(task)}>{task.task}</span>
+              task.isEditing ? (<EditToDoForm handleUpdateTask={handleUpdateTask} task={task} />) : <div>
+                <span onClick={() => currentTask(task)}>{task.task}</span>
+                {" "}<button onClick={() => deleteTask(task)}>Delete</button>
+              </div>
             }
           </li>))
         }
