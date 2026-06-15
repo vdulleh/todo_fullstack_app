@@ -85,7 +85,7 @@ The application should allow users to manage tasks by:
 
 | Method | Endpoint     | Description             |
 | ------ | ------------ | ----------------------- |
-| GET    | `/tasks`     | List all tasks          |
+| GET    | `/tasks`     | List all tasks (DONE)   |
 | POST   | `/tasks`     | Create a new task       |
 | PUT    | `/tasks/:id` | Update an existing task |
 | DELETE | `/tasks/:id` | Delete a task           |
