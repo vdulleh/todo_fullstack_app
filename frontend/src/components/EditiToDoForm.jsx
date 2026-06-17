@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import { updateTask } from "../actions/taskActions"
+<tas>  </tas>
 
 
 const schema = yup
@@ -24,12 +26,9 @@ export default function EditToDoForm({ handleUpdateTask, task }) {
         }
     });
 
-    const onSubmit = (data) => {
-        handleUpdateTask({
-            id: task.id,
-            task: data.task,
-            isEditing: false
-        }); // This will call the handleUpdateTask function passed down from the App component, passing the task's ID, the updated task text, and setting isEditing to false to exit edit mode after updating.
+    const onSubmit = async (data) => {
+        await updateTask(task.id, data.task);
+        handleUpdateTask({ ...task, task: data.task, isEditing: false }); // This will call the handleUpdateTask function passed from the App component with the updated task object, which will update the state of the todoTasks in the App component and trigger a re-render to show the updated task in the list.   
         reset();
     }
 
