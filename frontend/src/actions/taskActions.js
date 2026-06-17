@@ -19,13 +19,24 @@ export async function addTask(task) {
 }
 
 export async function updateTask(id, task) {
-  const response = await fetch(`${API_URL}/tasks`, {
+  const response = await fetch(`${API_URL}/tasks/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, task }),
+    body: JSON.stringify({ task }),
   });
   const updatedTask = await response.json();
   return updatedTask;
+}
+
+export async function deleteTask(id) {
+  const response = await fetch(`${API_URL}/tasks/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const result = await response.json();
+  return result;
 }

@@ -103,19 +103,19 @@ The application should allow users to manage tasks by:
 
 #### Fetch Tasks
 
-- As a user, I should be able to retrieve tasks from the backend.
+- As a user, I should be able to retrieve tasks from the backend. (DONE)
 
 #### Persist Updates
 
-- As a user, when I update a task, the changes should persist in the database.
+- As a user, when I update a task, the changes should persist in the database.(DONE)
 
 #### Persist Deletions
 
-- As a user, when I delete a task, it should be permanently removed from the database.
+- As a user, when I delete a task, it should be permanently removed from the database.(delete)
 
 #### Persist Creations
 
-- As a user, I should be able to add a new task that is stored in the database.
+- As a user, I should be able to add a new task that is stored in the database.(DONE)
 
 ---
 

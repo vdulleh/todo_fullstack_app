@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react' // Importing the useState hook from React to manage state in the App component.
 import './App.css' // Importing the CSS file for styling the App component.
-import ToDOform from './components/ToDoForm'; // Importing the ToDOform component from the components directory. This component will be used to add new tasks to the to-do list.
+import ToDOform from './components/ToDOform'; // Importing the ToDOform component from the components directory. This component will be used to add new tasks to the to-do list.
 import EditToDoForm from './components/EditiToDoForm'; // Importing the EditToDoForm component from the components directory. This component will be used to edit existing tasks in the to-do list.
 import { getTasks, addTask } from './actions/taskActions';
 
@@ -86,9 +86,10 @@ function App() { // Defining the App component, which is the main component of t
     setTodoTasks(updatedTasks); // This will update the state of the todoTasks with the updated tasks, which will trigger a re-render of the component and allow the user to see the edit form for the selected task.
   }
 
-  function deleteTask(task) {
+  async function deleteTask(taskId) { // This function will handle the deletion of a task when the user clicks the delete button. It will call the deleteTask function from the taskActions file to delete the task from the backend and then update the state of the todoTasks to remove the deleted task from the list.
+    await deleteTask(taskId); // This will call the deleteTask function from the taskActions file to delete the task from the backend. You should pass the task ID to this function to specify which task to delete.  
     const updatedTasks = todoTasks.filter(t => {
-      return t.id !== task.id;
+      return t.id !== taskId;
     });
     setTodoTasks(updatedTasks);
   }
