@@ -92,7 +92,7 @@ The application should allow users to manage tasks by:
 
 ### Documentation
 
-- Configure Swagger/OpenAPI documentation
+- Configure Swagger/OpenAPI documentation (DONE)
 - Create Postman collection for API testing
 
 ---

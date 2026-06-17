@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react' // Importing the useState hook from 
 import './App.css' // Importing the CSS file for styling the App component.
 import ToDOform from './components/ToDoForm'; // Importing the ToDOform component from the components directory. This component will be used to add new tasks to the to-do list.
 import EditToDoForm from './components/EditiToDoForm'; // Importing the EditToDoForm component from the components directory. This component will be used to edit existing tasks in the to-do list.
-import { getTasks } from './actions/taskActions';
+import { getTasks, addTask } from './actions/taskActions';
 
 function App() { // Defining the App component, which is the main component of the application.
   const [todoTasks, setTodoTasks] = useState([
@@ -38,6 +38,11 @@ function App() { // Defining the App component, which is the main component of t
     }
 
   ]);
+  async function handleAddTask(newtask) {
+    const newTask = await addTask(newtask);
+    console.log("New task added:", newTask);
+    setTodoTasks([newTask, ...todoTasks]);
+  }
 
   useEffect(() => { // Using the useEffect hook to fetch tasks from the backend when the component mounts. The empty dependency array ensures that this effect runs only once when the component is first rendered.
     (async () => {
@@ -46,15 +51,14 @@ function App() { // Defining the App component, which is the main component of t
     })();
   }, []);
 
-  function handleAddTask(newtask) {
-    console.log("New task added:", newtask); // This will log the new task to the console for debugging purposes.
-    setTodoTasks([{
-      id: todoTasks.length + 1, // This is a simple way to generate a unique ID, but in a real application, you might want to use a more robust method.
-      task: newtask,
-      isEditing: false
-
-    }, ...todoTasks]);
-  }
+  // function handleAddTask(newtask) {
+  //   console.log("New task added:", newtask); // This will log the new task to the console for debugging purposes.
+  //   setTodoTasks([{
+  //     id: todoTasks.length + 1, // This is a simple way to generate a unique ID, but in a real application, you might want to use a more robust method.
+  //     task: newtask,
+  //     isEditing: false
+  //   }, ...todoTasks]);
+  // }
 
   function handleUpdateTask(updatedTask) {
     console.log("Task updated:", updatedTask);
