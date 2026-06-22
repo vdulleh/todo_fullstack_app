@@ -42,11 +42,11 @@ app.post("/tasks", async (req, res) => {
 app.put("/tasks/:id", async (req, res) => {
   const { id } = req.params;
   const { task } = req.body;
-  const existingTask = await getTask(id);
+  const existingTask = await getTask(parseInt(id));
   if (!existingTask) {
     return res.status(404).json({ error: "Task not found" });
   }
-  const updatedTask = await updateTask(id, task);
+  const updatedTask = await updateTask(parseInt(id), task);
   res.json(updatedTask);
 });
 
