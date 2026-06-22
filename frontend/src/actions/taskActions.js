@@ -1,4 +1,5 @@
-const API_URL = "https://todo-fullstack-app-ivory.vercel.app/";
+const API_URL =
+  "https://todo-fullstack-app-qmzz-git-main-vdullehs-projects.vercel.app/";
 
 export async function getTasks() {
   const response = await fetch(`${API_URL}/tasks`);
