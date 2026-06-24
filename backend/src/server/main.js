@@ -1,6 +1,8 @@
 import express from "express";
+import fs from "fs";
 import ViteExpress from "vite-express";
 import cors from "cors";
+import swaggerUi from "swagger-ui-express";
 import {
   getTasks,
   createTask,
@@ -8,6 +10,10 @@ import {
   updateTask,
   deleteTask,
 } from "./dbService.js";
+
+const swaggerDocument = JSON.parse(
+  fs.readFileSync(new URL("../swagger.json", import.meta.url), "utf8"),
+);
 
 const app = express();
 
@@ -18,6 +24,10 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get("/swagger.json", (req, res) => {
+  res.json(swaggerDocument);
+});
 
 app.get("/tasks", async (req, res) => {
   const tasks = await getTasks();
