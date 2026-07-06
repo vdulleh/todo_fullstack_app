@@ -123,8 +123,8 @@ The application should allow users to manage tasks by:
 
 ### CI/CD Pipeline
 
-- Create a build and deployment pipeline
-- Automate deployments to AWS
+- Create a build and deployment pipeline(DONE)
+- Automate deployments to AWS (DONE)
 
 ### Infrastructure
 
